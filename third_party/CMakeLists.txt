@@ -43,6 +43,7 @@ if (DAWN_FETCH_DEPENDENCIES)
             ${Python3_EXECUTABLE}
             "${PROJECT_SOURCE_DIR}/tools/fetch_dawn_dependencies.py"
             --directory ${PROJECT_SOURCE_DIR}
+            --git ${Git_EXECUTABLE}
             ${EXTRA_FETCH_ARGS}
     )
 endif ()
