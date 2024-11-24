@@ -156,6 +156,7 @@ def process_dir(args, dir_path, required_submodules):
         raw_url = deps[submodule]['url']
         git_url, git_tag = raw_url.format(**variables).rsplit('@', 1)
 
+        log(f"Git path is {args.git}\n Submodule path is {submodule_path}")
         # Run git from within the submodule's path (don't use for clone)
         git = lambda *x: subprocess.run([args.git, '-C', submodule_path, *x],
                                         capture_output=True)
