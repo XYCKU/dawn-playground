@@ -40,6 +40,7 @@ import os
 import sys
 import subprocess
 import argparse
+import shutil
 from pathlib import Path
 
 parser = argparse.ArgumentParser(
@@ -122,6 +123,8 @@ def main(args):
     root_dir = Path(args.directory).resolve()
 
     print(sys.path)
+    git_path = shutil.which("git")
+    print(git_path)
     process_dir(args, root_dir, required_submodules)
 
 
