@@ -121,6 +121,7 @@ def main(args):
 
     root_dir = Path(args.directory).resolve()
 
+    print(sys.path)
     process_dir(args, root_dir, required_submodules)
 
 
@@ -158,6 +159,7 @@ def process_dir(args, dir_path, required_submodules):
 
         # Run git from within the submodule's path (don't use for clone)
         def git(*x):
+            
             result = subprocess.run([args.git, '-C', str(submodule_path), *x],
                                         capture_output=True, shell=True)
             result.check_returncode()
