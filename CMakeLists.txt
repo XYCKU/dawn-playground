@@ -396,7 +396,7 @@ endif()
 find_package(Python3 REQUIRED)
 message(STATUS "Dawn: using python at ${Python3_EXECUTABLE}")
 find_package(Git REQUIRED)
-message(STATUS "Dawn: using git at ${Git_EXECUTABLE}")
+message(STATUS "Dawn: using git at ${GIT_EXECUTABLE}")
 
 set(IS_DEBUG_BUILD 0)
 string(TOUPPER "${CMAKE_BUILD_TYPE}" build_type)
